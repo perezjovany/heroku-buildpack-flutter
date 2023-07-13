@@ -12,6 +12,5 @@ cat <<EOF
 ---
 default_process_types:
     web: /app/dart-sdk/bin/dart pub global run dhttpd --host 0.0.0.0 --path ${DEPLOY_DIR}
-    backend: npm start --prefix /app/server
 
 EOF
