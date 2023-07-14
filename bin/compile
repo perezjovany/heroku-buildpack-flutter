@@ -121,6 +121,7 @@ if [ "$FLUTTER_CLEANUP" != false ]; then
 
 fi
 
+<<debug
 # Activate dhttpd dart package to run the server.
 # Is taken from my Github repo because some variables need to be changed every run
 # like PORT from environment.
@@ -137,9 +138,11 @@ else
   cp -R $PUB_CACHE/* $CACHE_DIR/.pub-cache/
 fi
 
+
 # Moving to the build, after running the compile. All will be deleted and removed to app directory.
 # Copying the result, the files will be kept in storage.
 cp -R $PUB_CACHE $BUILD_DIR
 
 export PATH="$PATH":"/app/dart-sdk/bin/"
 export PATH="$PATH":"/app/.pub-cache/bin"
+debug
